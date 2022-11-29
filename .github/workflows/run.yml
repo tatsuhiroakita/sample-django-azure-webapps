@@ -18,5 +18,5 @@ jobs:
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
       - run: |
-          docker build . -t ${{ secrets.REGISTRY_NAME }}..azurecr.io/${IMAGE_NAME}:${GITHUB_REF#refs/heads/}
+          docker build . -t ${{ secrets.REGISTRY_NAME }}.azurecr.io/${IMAGE_NAME}:${GITHUB_REF#refs/heads/}
           docker push ${{ secrets.REGISTRY_NAME }}.azurecr.io/${IMAGE_NAME}:${GITHUB_REF#refs/heads/}
